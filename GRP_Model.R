@@ -25,30 +25,30 @@ rm(list = ls())                             ## clear environment
 lake <- tk_select.list(c("Acton", "Hoover"), title = "Pick a lake:")
 
 ## Read in shoreline polygons saved in reservoir data files folder
-shoreline <- readOGR(paste("C:/Users/richa/OneDrive/Desktop/Climate Change GRP/Reservoir data files/",
+shoreline <- readOGR(paste("C:/Users/richa/OneDrive/Desktop/Reservoir data files/",
                                  lake, "/", lake, "_lake.shp", sep = ""))
 
 ## Read in depth data
-depthdata.rg <- readOGR(paste("C:/Users/richa/OneDrive/Desktop/Climate Change GRP/Reservoir data files/",
+depthdata.rg <- readOGR(paste("C:/Users/richa/OneDrive/Desktop/Reservoir data files/",
                              lake, sep = ""), paste(lake, "_depths", sep = ""))
 
 ## Read in lake acoustic data
-allHAD <- read.csv(paste("C:/Users/richa/OneDrive/Desktop/Climate Change GRP/Reservoir data files/", lake,
+allHAD <- read.csv(paste("C:/Users/richa/OneDrive/Desktop/Reservoir data files/", lake,
                          "/", lake, "_acoustics.csv", sep = ""))
 allHAD$Date <- as.Date(allHAD$Date, "%m/%d/%Y")  ## changes date format
 
 ##  Read in water quality data
-allWQ <- read.csv(paste("C:/Users/richa/OneDrive/Desktop/Climate Change GRP/Reservoir data files/", lake,
+allWQ <- read.csv(paste("C:/Users/richa/OneDrive/Desktop/Reservoir data files/", lake,
                      "/", lake, "_WQ.csv", sep = ""))
 allWQ$Trip_Date <- as.Date(allWQ$Trip_Date, "%m/%d/%Y")  ## changes date format
 
 ##  Read in gillnet data
-allgillnet <- read.csv(paste("C:/Users/richa/OneDrive/Desktop/Climate Change GRP/Reservoir data files/", lake,
+allgillnet <- read.csv(paste("C:/Users/richa/OneDrive/Desktop/Reservoir data files/", lake,
                            "/", lake, "_gillnet.csv", sep = ""))
 allgillnet$Trip_Date <- as.Date(allgillnet$Trip_Date, "%m/%d/%Y")  ## changes date format
 
 ##### Reads bioenergetic database #####
-bioparam <- read.csv("C:/Users/richa/OneDrive/Desktop/Climate Change GRP/Reservoir data files/Bioenergetics.csv")
+bioparam <- read.csv("C:/Users/richa/OneDrive/Desktop/Reservoir data files/Bioenergetics.csv")
 
 ## Input date for simulation and create 5-d window to include sampling not on exact day
 sdates <- unique(allHAD$Date)
