@@ -1,6 +1,5 @@
 ## 3D GRP model that runs for a single lake, date and species.
 ## Also returns summary data file and 3D array data
-## Updated to include Whitledge et al 2003 SMB parameters
 ## Date specific ShadW and shadED (prey) values for Acton and Hoover were
 ## based on weighted averages from gillnet catch.
 ## Original model code by G. Steinhart
