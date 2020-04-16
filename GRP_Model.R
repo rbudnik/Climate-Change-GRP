@@ -24,8 +24,7 @@ library(tcltk)
 rm(list = ls())                             ## clear environment
 
 #####  Menu and read files code  #####
-lake <- tk_select.list(c("Acton", "Alum Creek", "Burr Oak", "Delaware", "Dillon", 
-                         "Findlay1", "Findlay2",  "Hoover", "Pleasant Hill", "Tappan"), title = "Pick a lake:")
+lake <- tk_select.list(c("Acton", "Hoover"), title = "Pick a lake:")
 
 ## Read in shoreline polygons saved in reservoir data files folder
 shoreline <- readOGR(paste("C:/Users/richa/OneDrive/Desktop/Climate Change GRP/Reservoir data files/",
@@ -848,8 +847,7 @@ soi <- tk_select.list(as.character(soichar), title = "Pick a Species:")
     Summary3D[3,7] <- mean(GRPd$Biomass)    
 
     ## Print results
-    write.table(GRPd, paste("C:/Users/richa/OneDrive/Desktop/Climate Change GRP/Reservoir Summaries/", lake, " summaries", "/",
-                            soi, "/", dayoi, "_", soi, "_", lake, ".txt", sep = ""), row.names = TRUE)
-    write.table(Summary3D, paste("C:/Users/richa/OneDrive/Desktop/Climate Change GRP/Reservoir Summaries/", lake, " summaries", "/",
-                            soi, "/", dayoi, "_", soi, "_", lake, "_sum.txt", sep = ""), row.names = TRUE)
+    write.table(GRPd, paste("C:/Users/richa/OneDrive/Desktop/", dayoi, "_", soi, "_", lake, ".txt", sep = ""), row.names = TRUE)
+    write.table(Summary3D, paste("C:/Users/richa/OneDrive/Desktop/", dayoi, "_", soi, "_", lake, "_sum.txt", sep = ""), row.names = TRUE)
+
 }
